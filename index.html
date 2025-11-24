@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lance Damalerio</title>
-    <!-- Using Inter for that clean, Grotesque sans-serif look. 
-         Tight tracking on bold weights mimics the "cool" modern startup aesthetic. -->
+    <!-- Using Inter for that clean, Grotesque sans-serif look. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -18,8 +17,7 @@
             --bg-color: #f2f2f2; /* Light grey paper/concrete tone */
             --text-main: #111111;
             --text-sub: #666666;
-            --line-color: #e0e0e0; /* Subtle divider */
-            --line-color-dark: #111111; /* Strong divider */
+            --line-color: #e0e0e0;
             --hover-bg: #e8e8e8;
         }
 
@@ -38,7 +36,7 @@
             justify-content: center;
             align-items: center;
             padding: 2rem;
-            /* Subtle noise texture for that "printed" feel */
+            /* Subtle noise texture */
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
         }
 
@@ -55,7 +53,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
-            align-items: flex-start; /* Left align like reference */
+            align-items: flex-start;
         }
 
         .avatar-container {
@@ -63,7 +61,7 @@
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.1); /* Subtle outline */
+            border: 1px solid rgba(0,0,0,0.1);
             position: relative;
         }
 
@@ -71,11 +69,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(100%);
+            /* grayscale filter removed for color image */
         }
-        
-        /* Optional: The "profile" text arc from your screenshot is complex to do purely in CSS quickly, 
-           so we stick to the clean layout. */
 
         .info {
             display: flex;
@@ -92,24 +87,11 @@
             color: var(--text-main);
         }
 
-        .bio {
-            font-size: 1rem;
-            font-weight: 400;
-            color: var(--text-sub);
-            line-height: 1.4;
-            max-width: 90%;
-        }
-
-        .bio strong {
-            color: var(--text-main);
-            font-weight: 600;
-        }
-
         /* --- LINKS LIST --- */
         .links-wrapper {
             display: flex;
             flex-direction: column;
-            border-top: 1px solid var(--text-main); /* Strong top line */
+            border-top: 1px solid var(--text-main);
         }
 
         .link-item {
@@ -118,32 +100,22 @@
             padding: 1.75rem 0.5rem;
             border-bottom: 1px solid rgba(0,0,0,0.1);
             display: grid;
-            grid-template-columns: 2rem 1fr auto; /* Number - Content - Icon */
+            grid-template-columns: 2rem 1fr auto;
             align-items: center;
             transition: all 0.2s ease;
-            position: relative;
         }
 
-        /* Number styling (01, 02...) */
         .link-number {
-            font-family: 'Inter', sans-serif; /* Or monospace if preferred */
+            font-family: 'Inter', sans-serif;
             font-size: 0.75rem;
             color: var(--text-sub);
             font-weight: 500;
         }
 
-        /* Center content styling */
         .link-content {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-        }
-
-        .link-logo {
-            width: 20px;
-            height: 20px;
-            object-fit: contain;
-            opacity: 0.8;
         }
 
         .link-text {
@@ -153,7 +125,6 @@
             letter-spacing: -0.5px;
         }
 
-        /* Right icon styling */
         .link-icon {
             color: var(--text-main);
             transition: transform 0.2s ease;
@@ -161,13 +132,13 @@
 
         /* Hover States */
         .link-item:hover {
-            background-color: rgba(0,0,0,0.03); /* Very subtle grey fill */
-            padding-left: 1rem; /* Slight shift right */
-            padding-right: 1rem; /* Slight shift left compensation */
+            background-color: rgba(0,0,0,0.03);
+            padding-left: 1rem;
+            padding-right: 1rem;
         }
 
         .link-item:hover .link-icon {
-            transform: translateX(3px); /* Arrow moves right */
+            transform: translateX(3px);
         }
 
         .link-item:hover .link-text {
@@ -192,13 +163,12 @@
         <!-- Header -->
         <header class="header">
             <div class="avatar-container">
-                <!-- REPLACE 'https://...' BELOW with your local file name: "_10354 5.jpg" -->
-                <img src="_10354 5.jpg" alt="Lance Damalerio" class="avatar">
+                <!-- IMPORTANT: Change src to "_10354 5.jpg" when deploying -->
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop" alt="Lance Damalerio" class="avatar">
             </div>
             
             <div class="info">
                 <h1>Lance Damalerio</h1>
-                <!-- Bio removed as requested -->
             </div>
         </header>
 
@@ -209,10 +179,8 @@
             <a href="https://prepfolio.app" target="_blank" class="link-item">
                 <span class="link-number">01</span>
                 <div class="link-content">
-                    <!-- SVG Logo for aesthetic/brand recognition inside the list line -->
                     <span class="link-text">PREPFOLIO.APP</span>
                 </div>
-                <!-- Lucide Icon: Arrow Right -->
                 <i data-lucide="arrow-right" class="link-icon"></i>
             </a>
 
@@ -222,28 +190,24 @@
                 <div class="link-content">
                     <span class="link-text">LINKEDIN</span>
                 </div>
-                <!-- Lucide Icon: Linkedin -->
                 <i data-lucide="linkedin" class="link-icon"></i>
             </a>
 
-            <!-- Item 03: Calendly -->
-            <!-- NOTE: Replace the href below with your PUBLIC Calendly link (e.g. calendly.com/yourname) -->
+            <!-- Item 03 -->
             <a href="https://calendly.com/app/scheduling/meeting_types/user/me?pane=event_type_editor&paneState=ZGVmYXVsdE9wZW5LZXk9bG9jYXRpb24mdHlwZT1TdGFuZGFyZEV2ZW50VHlwZSZ1bmlxdWVJZD1CaDl5YVZUZFdvdU1xM3k2VTUxVnomb3duZXJUeXBlPVVzZXImb3duZXJJZD00MTI4NzU0MyZraW5kPXNvbG8maWQ9MTkzNDIwOTM2JnNob3dQcmV2aWV3PXRydWU%3D" target="_blank" class="link-item">
                 <span class="link-number">03</span>
                 <div class="link-content">
                     <span class="link-text">BOOK A CALL</span>
                 </div>
-                <!-- Lucide Icon: Calendar -->
                 <i data-lucide="calendar" class="link-icon"></i>
             </a>
 
-            <!-- Item 04: Email -->
+            <!-- Item 04 -->
             <a href="mailto:lancedamalerio@gmail.com" class="link-item">
                 <span class="link-number">04</span>
                 <div class="link-content">
                     <span class="link-text">LANCEDAMALERIO@GMAIL.COM</span>
                 </div>
-                <!-- Lucide Icon: Mail -->
                 <i data-lucide="mail" class="link-icon"></i>
             </a>
 
